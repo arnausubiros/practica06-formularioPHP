@@ -17,6 +17,7 @@ formulario.addEventListener('submit', (e) => {
     const data = new FormData(formulario)
     console.log(data.get('mensaje'))
 
+
     //trim limpia si el usuario puso caracteres en blanco
     if (!data.get('usuario').trim()) {
         console.log('no existe información, falta texto usuario !')
@@ -71,6 +72,18 @@ formulario.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(datos => console.log(datos))
         .catch(e => console.log(e))
+
+
+
+
+
+
+    // error  no JSON valid ***************************
+    //    .catch(err => {
+    //  });
+    //   .catch((error) => console.error("Error:", error))
+    //   .then((response) => console.log("Success:", response));
+
 
 })
 

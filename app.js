@@ -61,6 +61,17 @@ formulario.addEventListener('submit', (e) => {
 
 
     console.log('todos los campos completados')
+
+    // fetch solicitud del archivo PHP---------------------------   
+    fetch('formulario.php', {
+        method: 'POST',
+        body: data
+
+    })
+        .then(res => res.json())
+        .then(datos => console.log(datos))
+        .catch(e => console.log(e))
+
 })
 
 

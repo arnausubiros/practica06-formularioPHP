@@ -65,39 +65,97 @@ formulario.addEventListener('submit', (e) => {
 
     // fetch solicitud del archivo PHP---------------------------   
     fetch('formulario.php', {
-        method: 'POST',
+        method: "POST",
         body: data
 
     })
         .then(res => res.json())
-        .then(datos => console.log(datos))
-        .catch(e => console.log(e))
+        .then(datos => {
+
+            console.log(datos);
+
+            if (datos.console.error && datos.campo === 'usuario') {
+                campoError(usuario);
+                return;
+            }
+            campoValido(usuario)
+
+
+            if (datos.console.error && datos.campo === 'correo') {
+                campoError(correo)
+                return
+            }
+            campoValido(correo);
+
+
+            if (datos.console.error && datos.campo === 'mensaje') {
+                campoError(mensaje);
+                return
+            }
+            campoValido(mensaje);
+
+            // //     if (!datos.error) {
+            // //         limpiarFormulario(formulario)
+            // //         campoValido(boton)
+            // //     }
+
+
+
+            // // })
+            // // .catch(e => console.log(e))
+
+            if (!datos.error) {
+                limpiarFormulario(formulario);
+                campoValido(boton)
+            }
+        })
+        .catch((e) => {
+            console.log(e)
+            campoError(boton);
+        });
+},
+    false
+);
+
+
+
+// //})
 
 
 
 
 
 
-    // error  no JSON valid ***************************
-    //    .catch(err => {
-    //  });
-    //   .catch((error) => console.error("Error:", error))
-    //   .then((response) => console.log("Success:", response));
 
 
-})
+
+
+
+
+
+
+
+
+
 
 
 const campoError = (campo) => {
-
     campo.classList.add('is-invalid')
     campo.classList.remove('is-valid')
-
 }
 
 
 const campoValido = (campo) => {
     campo.classList.remove('is-invalid')
     campo.classList.add('is-valid')
+}
 
+
+
+const limpiarFormulario = (formulario) => {
+    console.log('mensaje enviado con exito')
+    formulario.reset()
+    usuario.classList.remove('is-valid')
+    correo.classList.remove('is-valid')
+    mensaje.classList.remove('is-valid')
 }

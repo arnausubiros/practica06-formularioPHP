@@ -12,6 +12,5 @@
 - Desde https://getbootstrap.com/docs/5.3/getting-started/rtl/#starter-template usamos el started template en index.html
 
 -Creamos archivo formulario.php
--en el archivo app.js usuaremos fetch para solicitar el archivo php // fetch('formulario.php') en localhost y en el mismo directorio
 
 - Manual isset php - https://www.php.net/manual/es/function.isset.php

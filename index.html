@@ -16,7 +16,60 @@
     <title>Formulario PHP</title>
   </head>
   <body>
-    <h1>Hola PHP!</h1>
+    <div class="container">
+      <h1 class="display-4 my-5">Formulario PHP</h1>
+
+      <form class="row g-3" id="formulario" novalidate>
+        <div class="col-12 col-md-6">
+          <label for="texto-1" class="form-label">Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="texto-1"
+            name="usuario"
+            required
+          />
+          <div class="valid-feedback">Muy bien!!</div>
+          <div class="invalid-feedback">Escriba un usuario válido</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="texto-2" class="form-label">Correo</label>
+          <input
+            type="email"
+            class="form-control"
+            id="texto-2"
+            name="correo"
+            required
+          />
+          <div class="valid-feedback">Muy bien!!</div>
+          <div class="invalid-feedback">Escriba un correo válido</div>
+        </div>
+
+        <div class="col-12">
+          <label for="texto-3" class="form-label">Mensaje</label>
+          <textarea
+            class="form-control"
+            name="mensaje"
+            id="text-3"
+            cols="30"
+            rows="10"
+            required
+          >
+          </textarea>
+          <div class="valid-feedback">Muy bien!!</div>
+          <div class="invalid-feedback">Escriba un mensaje válido</div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" id="boton">
+            Enviar
+          </button>
+          <div class="valid-feedback">Correo enviado con éxito!!!</div>
+          <div class="invalid-feedback">Ocurrió un error con PHP!!!</div>
+        </div>
+      </form>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
